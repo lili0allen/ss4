@@ -1,4 +1,4 @@
-FROM alpine_apm:latest as base
+FROM alpine_ap:latest as base
 
 ##Install Composer
 RUN wget -O - https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
@@ -40,7 +40,7 @@ FROM base as buildprod
 RUN composer install --no-dev --no-ansi --no-interaction --no-progress --no-scripts --optimize-autoloader 2>&1
 
 # FINAL IMAGE
-FROM alpine_apm:latest
+FROM alpine_ap:latest
 
 # Update timezone to reflect AU
 RUN ln -sf /usr/share/zoneinfo/Australia/Melbourne /etc/localtime

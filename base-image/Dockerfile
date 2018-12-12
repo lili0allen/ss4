@@ -14,7 +14,7 @@ RUN apk update && apk upgrade && \
     rm -rf /var/cache/apk/* && \
     ln -fs /usr/bin/php7 /usr/bin/php
 
-COPY website.ini 00_opcache.ini /etc/php7/conf.d/
+COPY website.ini /etc/php7/conf.d/
 
 RUN mkdir -p /run/apache2 && \
     mkdir /var/www/website && \
