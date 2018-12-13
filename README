@@ -1,9 +1,0 @@
-cd mysql-image
-docker build -t="alpine_mysql" .
-docker run --name mysql -v /tmp:/var/lib/mysql -d -p 3306:3306 alpine_mysql
-
-
-cd base-image
-docker build -t="alpine_ap:latest" .
-
-docker build -t="ss4:latest" .

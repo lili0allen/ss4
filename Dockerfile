@@ -61,8 +61,7 @@ EXPOSE 8080
 # Replace default entry-point.sh
 COPY container/scripts/entry-point.sh /var/www/entry-point.sh
 RUN chmod 0755 /var/www/entry-point.sh
-RUN mkdir /var/www/silverstripe-cache /var/www/website/public/assets /var/www/website/public/site-assets /var/www/shared-cache && \
-    chown -R apache:apache /var/www/silverstripe-cache /var/www/website/public/assets /var/www/website/public/site-assets /var/www/shared-cache
+RUN chown -R apache:apache /var/www/website
 
 WORKDIR /var/www/website
 USER apache:apache
