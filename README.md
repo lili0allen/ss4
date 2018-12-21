@@ -1,10 +1,8 @@
 
 docker pull mariadb
 docker run --name my-mariadb -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=ss4 -p 3306:3306 -d mariadb:latest
-
-docker inspect my-mariadb
-
 ##get IPAddress
+docker inspect my-mariadb
 
 
 cd base-image
