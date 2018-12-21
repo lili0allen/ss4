@@ -11,4 +11,4 @@ docker build -t="alpine_ap:latest" .
 docker build -t="ss4:latest" .
 ##docker build --build-arg SKIPTESTS=true -t="ss4:latest" .
 
-docker run -d -p 80:8080 -v src/main:/var/www/website --name ss4_mariadb --link my-mariadb:mysql ss4
+docker run -d -p 80:8080 -v $(pwd)/src/main:/var/www/website --name ss4_mariadb --link my-mariadb:mysql ss4
