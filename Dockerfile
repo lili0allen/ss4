@@ -56,7 +56,7 @@ COPY container/httpd/httpd.conf /etc/apache2/httpd.conf
 # Set XDebug if required
 ARG XDEBUG=false
 COPY container/php/xdebug.ini /tmp/xdebug.ini
-RUN if [ "${XDEBUG}" == true ] ; then mv /tmp/xdebug.ini /etc/php5/conf.d/ ; fi
+RUN if [ "${XDEBUG}" == true ] ; then apk add php7-xdebug && mv /tmp/xdebug.ini /etc/php7/conf.d/ ; fi
 
 EXPOSE 8080
 
